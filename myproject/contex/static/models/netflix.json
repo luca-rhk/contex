@@ -1,0 +1,591 @@
+{
+    "elements": [
+        {
+            "attributes": {
+                "name": "Netflix",
+                "default": true,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -540,
+                        "y": -70
+                    },
+                    "size": {
+                        "height": 290,
+                        "width": 410
+                    }
+                }
+            },
+            "id": "application",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Change Movie",
+                "parameters": [
+                    "song"
+                ],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -410,
+                        "y": 240
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "changemovie",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": "Start Movie",
+                "parameters": [],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -102.5,
+                        "y": 10
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "startmovie",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": "Stop Movie",
+                "parameters": [
+                    "movie"
+                ],
+                "results": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -102.5,
+                        "y": 120
+                    },
+                    "size": {
+                        "height": 50,
+                        "width": 75
+                    }
+                }
+            },
+            "id": "stopmovie",
+            "type": "ifml.Action"
+        },
+        {
+            "attributes": {
+                "name": "Player",
+                "default": false,
+                "landmark": false,
+                "xor": true
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -340,
+                        "y": -40
+                    },
+                    "size": {
+                        "height": 250,
+                        "width": 200
+                    }
+                }
+            },
+            "id": "player",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "MovieList",
+                "stereotype": "list",
+                "fields": [
+                    "author",
+                    "title"
+                ],
+                "collection": "movies",
+                "filters": []
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -530,
+                        "y": -40
+                    },
+                    "size": {
+                        "height": 230,
+                        "width": 150
+                    }
+                }
+            },
+            "id": "songlist",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "started"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -350,
+                        "y": 230
+                    },
+                    "name": {
+                        "horizontal": "right-outer",
+                        "vertical": "middle"
+                    }
+                }
+            },
+            "id": "song-started-from-list",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "started"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -105,
+                        "y": 50
+                    },
+                    "name": {
+                        "horizontal": "left",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "songstarted",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "stopped"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -105,
+                        "y": 110
+                    },
+                    "name": {
+                        "horizontal": "left",
+                        "vertical": "top"
+                    }
+                }
+            },
+            "id": "songstopped",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "Stopped",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -330,
+                        "y": -10
+                    },
+                    "size": {
+                        "height": 100,
+                        "width": 180
+                    }
+                }
+            },
+            "id": "stopped",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "Playing",
+                "default": false,
+                "landmark": false,
+                "xor": false
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -330,
+                        "y": 100
+                    },
+                    "size": {
+                        "height": 100,
+                        "width": 180
+                    }
+                }
+            },
+            "id": "playing",
+            "type": "ifml.ViewContainer"
+        },
+        {
+            "attributes": {
+                "name": "selected",
+                "stereotype": "selection"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -390,
+                        "y": 180
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "bottom"
+                    }
+                }
+            },
+            "id": "songselected",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "PlayerStopped",
+                "stereotype": "details",
+                "fields": [
+                    "title"
+                ],
+                "collection": "movies"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -320,
+                        "y": 20
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 160
+                    }
+                }
+            },
+            "id": "playerstopped",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "PlayerPlaying",
+                "stereotype": "details",
+                "fields": [
+                    "title"
+                ],
+                "collection": "movies"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -320,
+                        "y": 130
+                    },
+                    "size": {
+                        "height": 60,
+                        "width": 160
+                    }
+                }
+            },
+            "id": "playerplaying",
+            "type": "ifml.ViewComponent"
+        },
+        {
+            "attributes": {
+                "name": "play"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -170,
+                        "y": 20
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "middle"
+                    }
+                }
+            },
+            "id": "play",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "name": "stop"
+            },
+            "metadata": {
+                "graphics": {
+                    "position": {
+                        "x": -170,
+                        "y": 135
+                    },
+                    "name": {
+                        "horizontal": "left-outer",
+                        "vertical": "middle"
+                    }
+                }
+            },
+            "id": "stop",
+            "type": "ifml.Event"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "3cd3db4e-6e43-49fa-a55f-09a7a6cc11d9",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "id",
+                        "output": "id"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "3d47f29c-964c-4bd8-bf3f-7a8aa00fe5ef",
+            "type": "ifml.DataFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "505e21ac-2693-4da1-be00-fb94c117ba66",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "song",
+                        "output": "id"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "7860e2d7-3b3b-4173-a9c5-4b2fe2c83d73",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "abd7a45b-a3a7-40e0-bfa8-1dec1d58b97f",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "b1e4fa39-931e-4b0a-ab07-cc6dfa140888",
+            "type": "ifml.NavigationFlow"
+        },
+        {
+            "attributes": {
+                "bindings": [
+                    {
+                        "input": "id",
+                        "output": "id"
+                    }
+                ]
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "effbac2d-f6d5-4a8f-9536-29835da3ad9d",
+            "type": "ifml.DataFlow"
+        },
+        {
+            "attributes": {
+                "bindings": []
+            },
+            "metadata": {
+                "graphics": {}
+            },
+            "id": "fafe15b1-d7d4-47ef-bbfe-a5d137e6f173",
+            "type": "ifml.NavigationFlow"
+        }
+    ],
+    "relations": [
+        {
+            "type": "hierarchy",
+            "parent": "application",
+            "child": "player"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "application",
+            "child": "songlist"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "changemovie",
+            "child": "song-started-from-list"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "startmovie",
+            "child": "songstarted"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "stopmovie",
+            "child": "songstopped"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "player",
+            "child": "stopped"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "player",
+            "child": "playing"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "songlist",
+            "child": "songselected"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "stopped",
+            "child": "playerstopped"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "playing",
+            "child": "playerplaying"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "playerstopped",
+            "child": "play"
+        },
+        {
+            "type": "hierarchy",
+            "parent": "playerplaying",
+            "child": "stop"
+        },
+        {
+            "type": "source",
+            "flow": "3cd3db4e-6e43-49fa-a55f-09a7a6cc11d9",
+            "source": "stop"
+        },
+        {
+            "type": "source",
+            "flow": "3d47f29c-964c-4bd8-bf3f-7a8aa00fe5ef",
+            "source": "songlist"
+        },
+        {
+            "type": "source",
+            "flow": "505e21ac-2693-4da1-be00-fb94c117ba66",
+            "source": "play"
+        },
+        {
+            "type": "source",
+            "flow": "7860e2d7-3b3b-4173-a9c5-4b2fe2c83d73",
+            "source": "songselected"
+        },
+        {
+            "type": "source",
+            "flow": "abd7a45b-a3a7-40e0-bfa8-1dec1d58b97f",
+            "source": "songstopped"
+        },
+        {
+            "type": "source",
+            "flow": "b1e4fa39-931e-4b0a-ab07-cc6dfa140888",
+            "source": "song-started-from-list"
+        },
+        {
+            "type": "source",
+            "flow": "effbac2d-f6d5-4a8f-9536-29835da3ad9d",
+            "source": "songlist"
+        },
+        {
+            "type": "source",
+            "flow": "fafe15b1-d7d4-47ef-bbfe-a5d137e6f173",
+            "source": "songstarted"
+        },
+        {
+            "type": "target",
+            "flow": "3cd3db4e-6e43-49fa-a55f-09a7a6cc11d9",
+            "target": "stopmovie"
+        },
+        {
+            "type": "target",
+            "flow": "3d47f29c-964c-4bd8-bf3f-7a8aa00fe5ef",
+            "target": "playerstopped"
+        },
+        {
+            "type": "target",
+            "flow": "505e21ac-2693-4da1-be00-fb94c117ba66",
+            "target": "startmovie"
+        },
+        {
+            "type": "target",
+            "flow": "7860e2d7-3b3b-4173-a9c5-4b2fe2c83d73",
+            "target": "changemovie"
+        },
+        {
+            "type": "target",
+            "flow": "abd7a45b-a3a7-40e0-bfa8-1dec1d58b97f",
+            "target": "playerstopped"
+        },
+        {
+            "type": "target",
+            "flow": "b1e4fa39-931e-4b0a-ab07-cc6dfa140888",
+            "target": "playerplaying"
+        },
+        {
+            "type": "target",
+            "flow": "effbac2d-f6d5-4a8f-9536-29835da3ad9d",
+            "target": "playerplaying"
+        },
+        {
+            "type": "target",
+            "flow": "fafe15b1-d7d4-47ef-bbfe-a5d137e6f173",
+            "target": "playerplaying"
+        }
+    ],
+    "statistics": {
+        "session": {
+            "started_at": "2021-06-05T10:50:37.793Z",
+            "ended_at": "2021-06-05T10:52:48.755Z"
+        }
+    }
+}

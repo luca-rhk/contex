@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extrahead %}
+<p>Model: {{ ifmlmodel.title }}</p>
+<p>Created at {{ ifmlmodel.create_date }}</p>
+<br>
+<br>
+<p>Model available at: <a href="{{ ifmlmodel.model.url }}" target="_blank">View</a> | <a href="{{ ifmlmodel.model.url }}" download>Download</a></p>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="base.css">
+{% block extrahead %}
+<p><strong>Model:</strong> {{ modeldata.title }}</p>
+<p><strong>Created at</strong> {{ modeldata.create_date }}</p>
+<br>
+<br>
+<p><strong>Model data available at:</strong> <button type="button" class="button">
+    <a href="{{ modeldata.model_data.url }}" target="_blank">VIEW</a>
+</button> | <button type="button" class="button">
+    <a href="{{ modeldata.model_data.url }}" download>DOWNLOAD</a>
+</button></p>
+{% endblock %}
